@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<h1>Docs</h1>
+
+<ul>
+    {% for doc in site.docs %}
+    <li>
+        <p>{{ doc.content | markdownify }}</p>
+    </li>
+    {% endfor %}
+</ul>
