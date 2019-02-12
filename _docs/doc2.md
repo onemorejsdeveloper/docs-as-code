@@ -1,6 +1,10 @@
 ---
-name: Doc 2
+title: Doc2
+status: Active
+type: Meta
+author: Test
+created: 2018-05-01
 ---
-# Doc 2
+# Header
 
-Just some text 2
+123

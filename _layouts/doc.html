@@ -1,6 +1,27 @@
 ---
 layout: default
 ---
-<h1>{{ page.name }}</h1>
 
-{{ content }}
+<div class="home">
+  <h1 class="page-heading">
+    {{ page.title | xml_escape }}
+  </h1>
+  <table>
+    <tr><th>Author</th><td>{{ page.author }}</td></tr>
+    {% if page["discussions-to"] != undefined %}
+      <tr><th>Discussions-To</th><td><a href="{{ page["discussions-to"] | uri_escape }}">{{ page["discussions-to"] | xml_escape }}</a></td></tr>
+    {% endif %}
+    <tr><th>Status</th><td>{{ page.status | xml_escape }}</td></tr>
+    <tr><th>Type</th><td>{{ page.type | xml_escape }}</td></tr>
+    {% if page.category != undefined %}
+      <tr><th>Category</th><td>{{ page.category | xml_escape }}</td></tr>
+    {% endif %}
+    <tr><th>Created</th><td>{{ page.created | xml_escape }}</td></tr>
+    {% if page.resolution != undefined %}
+      <tr><th>Resolution</th><td><a href="{{page.resolution | uri_escape }}">{{ page.resolution | xml_escape }}</a></td></tr>
+    {% endif %}
+  </table>
+
+  {{ content }}
+
+</div>
